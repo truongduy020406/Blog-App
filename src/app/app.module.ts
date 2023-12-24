@@ -18,6 +18,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PostCardComponent } from './layouts/post-card/post-card.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
