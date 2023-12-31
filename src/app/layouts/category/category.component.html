@@ -1,12 +1,15 @@
 <nav class="mx-auto">
     <div class=" shadow-md bg-secondary-color">
         <div >
-            <ul class="flex justify-center items-center gap-10 text-transform: uppercase text-primary-color h-16">
-                <li><a href="">Design</a></li>
-                <li><a href="">Inspiration</a></li>
-                <li><a href="">sports</a></li>
-                <li><a href="">politics</a></li>
-                <li><a href=""></a></li>
+            <ul class="flex justify-center items-center gap-10 text-transform: uppercase text-primary-color h-16"
+               
+            >
+                <li  *ngFor="let category of dataCategory">
+                    <a   class="cursor-pointer" (click)="ouput(category.data.category)">
+                        {{category.data.category}}
+                    </a>
+                </li>
+                
             </ul>
         </div>
     </div>

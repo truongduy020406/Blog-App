@@ -1,32 +1,21 @@
-<div class="max-w-[390px] bg-white rounded-md">
-        <div class=" shadow-xl">
-            <div class="mb-8">
-                <img class="rounded-t-md " src="https://www.elle.vn/wp-content/uploads/2017/07/25/hinh-anh-dep-1.jpg" alt="">
-            </div>
-           <div class="px-4">
+<div class="bg-white rounded-md" *ngIf="postdata" >
+
+            <img class="w-full " src="{{postdata.data.postImgPath}}" alt="">
+           <div class="p-4">
                     <ul class="flex items-center justify-start gap-5">
                         <li>
-                            <a class="text-red-600" href="#">Design</a>
+                            <a class="text-red-600" href="#">{{postdata.data.category.category}}</a>
                         </li>
                         <li>
                             <a class="text-green-600" href="#">Feature</a>
                         </li>
                         <li>
-                            <a class="text-orange-400" href="#">view - 100,230  </a>
+                            <a class="text-orange-400" href="#">view - {{postdata.data.views}}  </a>
                         </li>
-                    </ul>
-                <h2 class="uppercase text-2xl my-3">How to start a blog in 2023 editer new category </h2>
-                <p class="line-clamp-4">Tận hưởng từng khoảnh khắc, sống đầy đủ, 
-                    và trân trọng những điều nhỏ bé xung quanh. 
-                    Hạnh phúc thực sự nằm trong sự chấp nhận và tận hưởng hiện tại.
-                    Tận hưởng từng khoảnh khắc, sống đầy đủ, 
-                    và trân trọng những điều nhỏ bé xung quanh. 
-                    Hạnh phúc thực sự nằm trong sự chấp nhận và tận hưởng hiện tại.
-                </p>
-                <p class="my-4 text-amber-500">LAST UPDATE 12-12-2023</p>      
-            </div>
-            
-
-        </div>     
+                    </ul>                                          
+                    <h2 class="uppercase text-2xl my-3 ">{{postdata.data.title}} </h2>
+                    <p class="line-clamp-2 h-[39px]">{{postdata.data.excerpt}}
+                    <p class="mt-4 text-amber-500" >LAST UPDATE {{postdata.data.createdAt.toMillis() | date}}</p>                    
+            </div>  
     </div>
 

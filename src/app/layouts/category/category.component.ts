@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-
+  @Input() dataCategory!: any;
+  @Output() category = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
+  ouput(data:string){
+    this.category.emit(data)
+  }
 }

@@ -1,5 +1,9 @@
-<section class="bg-primary-color">
-    <div class="container mx-auto min-[1300px]:w-[1280px]">
+<app-category [dataCategory]="dataCategoryParent"
+    (category) = "categorysearch($event)"
+    >
+</app-category>
+<section class="bg-primary-color min-h-96">
+    <div class="container mx-auto min-[1300px]:w-[1280px] pb-12">
         <div class="px-4">
             <div class="flex flex-col items-center pt-10">
                 <h2 class="text-white text-2xl">Feature Posts</h2>
@@ -9,19 +13,18 @@
             tablet:grid-cols-2 tablet:overflow-hidden
             laptop:grid-cols-3 
             desktop:grid-cols-4">
-                <div class="justify-self-center items-center">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="justify-self-center items-center">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="justify-self-center items-center">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="justify-self-center items-center">
-                    <app-post-card></app-post-card>
-                </div>
+
+                <div *ngFor="let data of feturePostdata ">
+                    <app-post-card [postdata]="data"></app-post-card>
+                    
+                </div>   
+
+                
             </div>
+            <div *ngIf="!feturePostdata?.length" class="text-center mt-20"> 
+                <h1 class="text-3xl text-white">No data available</h1>
+              </div>
         </div>
+        
     </div>
 </section>
