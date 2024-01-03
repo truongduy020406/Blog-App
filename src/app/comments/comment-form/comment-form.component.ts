@@ -31,5 +31,6 @@ export class CommentFormComponent implements OnInit {
     }
     this.comment.emit(CommentData)
     console.log()
+    this.commentForm.reset()
   }
 }

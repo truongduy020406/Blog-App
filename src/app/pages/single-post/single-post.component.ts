@@ -13,7 +13,7 @@ export class SinglePostComponent implements OnInit  {
   dataPost: any ;
   similarPost: any ;
   idBlog!:string ;
-  dataComment: Comment[] = [];
+  dataComment: any;
 
   constructor(private post: PostsService ,private route:ActivatedRoute , private comment:CommmentsService) { }
 
@@ -27,6 +27,7 @@ export class SinglePostComponent implements OnInit  {
       })
       this.comment.loadCommentsByBlogID(this.idBlog).subscribe(data => {
         this.dataComment = data
+        console.log(this.dataComment)
       })
     })
     

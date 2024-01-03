@@ -14,14 +14,14 @@ export class CommmentsService {
     this.afs.collection('comments').add(commentData)
   }
 
-  loadCommentsByBlogID(blogID: string): Observable<Comment[]> {
+  loadCommentsByBlogID(blogID: string) {
     return this.afs.collection('comments', ref => ref.where('blogID', '==', blogID))
       .snapshotChanges().pipe(
         map(actions => {
           return actions.map(a => {
-            const data = a.payload.doc.data() as Comment;
+            const data = a.payload.doc.data();
             const id = a.payload.doc.id;
-            return { id, ...data };
+            return { id, data };
           });
         })
       );

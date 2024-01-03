@@ -7,10 +7,10 @@ import { Comment } from 'src/app/models/comment';
   styleUrls: ['./comment-list.component.css']
 })
 export class CommentListComponent implements OnInit {
-  @Input() dataComment!: Comment[];
+  @Input() dataComment!: any;
   constructor() { }
   ngOnInit(): void {
-
+    
   }
   
 }
