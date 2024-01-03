@@ -14,7 +14,7 @@ html{
     box-sizing: inherit;
 }
 footer{
-    margin-top: 50vh;
+    margin-top: 1vh;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

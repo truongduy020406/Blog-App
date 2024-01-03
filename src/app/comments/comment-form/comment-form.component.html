@@ -3,34 +3,50 @@
         <h2 class="text-3xl">Leave a reply</h2>
         <p></p>
     </div>
-    <div class="px-4 mt-5">
-        <div >
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                Username
-              </label>
-              <input class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
-        </div>
-        <div class="grid grid-cols-2 gap-10 mt-5">
+    <div class="px-4 mt-5" *ngIf="commentForm">
+        <form action="" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
             <div >
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Your email
+                    Username
                   </label>
-                  <input class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="@gmail.">
+                  <input 
+                    formControlName="name"
+                    autocomplete="username" 
+                    class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    id="username" 
+                    name="username"
+                    type="text" 
+                    placeholder="Username">
             </div>
-            <div>
+            <div class="grid grid-cols-2 gap-10 mt-5">
+                <div >
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        Your email
+                      </label>
+                      <input 
+                      formControlName="email" 
+                      autocomplete="email" class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="@gmail.">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="website">
+                        
+                        website
+                      </label>
+                      <input 
+                        formControlName="website"
+                        class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="website" type="text" placeholder="www.website">
+                </div>
+            </div>
+            <div class="mt-5">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    website
-                  </label>
-                  <input class="shadow appearance-none border rounded w-full py-2 pl-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="www.website">
+                    Comment
+                </label>
+                <textarea 
+                    formControlName="comment"
+                    id="comment" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write your thoughts here..."></textarea>
             </div>
-        </div>
-        <div class="mt-5">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                Comment
-            </label>
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write your thoughts here..."></textarea>
-        </div>
-
-        <button class="mt-5 bg-primary-color text-white p-3 rounded-sm">Add a comment</button>
+    
+            <button type="submit" class="mt-5 bg-primary-color text-white p-3 rounded-sm">Add a comment</button>
+        </form>
     </div>
 </div>

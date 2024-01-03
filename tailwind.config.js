@@ -12,6 +12,7 @@ module.exports = {
         'navnar-footer-color': '#F9F9F9',
       },
       screens: {
+        'iphone':'400px',
         'tablet': '640px',
         // => @media (min-width: 640px) { ... }
   

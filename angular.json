@@ -19,7 +19,13 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "@firebase/app-check"
+              
+          ],
             "outputPath": "dist/blog-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,7 +36,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },

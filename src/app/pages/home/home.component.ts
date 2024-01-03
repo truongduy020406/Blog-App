@@ -9,6 +9,8 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class HomeComponent implements OnInit {
   feturePostdata:any;
+  latestPostdata:any;
+  p: number = 1;
   dataCategoryParent: any;
   constructor(private posts:PostsService ,private categorySevices : CategoryService) { }
 
@@ -21,12 +23,11 @@ export class HomeComponent implements OnInit {
     this.categorySevices.loadData().subscribe(data =>{
       this.dataCategoryParent = data
     })
-    
-  }
-  categorysearch(data:string){
-    this.categorySevices.resarch(data).subscribe(ref=>{
-      this.feturePostdata = ref
-      console.log(this.feturePostdata)
+
+    this.posts.loadlatest().subscribe(val=>{
+      this.latestPostdata=val
     })
+  
   }
+
 }

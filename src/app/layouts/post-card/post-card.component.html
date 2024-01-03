@@ -1,21 +1,20 @@
-<div class="bg-white rounded-md" *ngIf="postdata" >
-
-            <img class="w-full " src="{{postdata.data.postImgPath}}" alt="">
-           <div class="p-4">
-                    <ul class="flex items-center justify-start gap-5">
-                        <li>
-                            <a class="text-red-600" href="#">{{postdata.data.category.category}}</a>
-                        </li>
-                        <li>
-                            <a class="text-green-600" href="#">Feature</a>
-                        </li>
-                        <li>
-                            <a class="text-orange-400" href="#">view - {{postdata.data.views}}  </a>
-                        </li>
-                    </ul>                                          
-                    <h2 class="uppercase text-2xl my-3 ">{{postdata.data.title}} </h2>
-                    <p class="line-clamp-2 h-[39px]">{{postdata.data.excerpt}}
-                    <p class="mt-4 text-amber-500" >LAST UPDATE {{postdata.data.createdAt.toMillis() | date}}</p>                    
-            </div>  
-    </div>
+<div class="bg-white rounded-md cursor-pointer" *ngIf="postdata" [routerLink]="['/post', postdata.id]">
+<img class="w-full " src="{{postdata.data.postImgPath}}" alt="">
+    <div class="p-4">
+            <ul class="flex items-center justify-start gap-5">
+                <li>
+                    <a class="text-red-600" href="#">{{postdata.data.category.category}}</a>
+                </li>
+                <li>
+                    <a class="text-green-600" href="#" *ngIf="postdata.data.isFeatured">Feature</a>
+                </li>
+                <li>
+                    <a class="text-orange-400" href="#">view - {{postdata.data.views}}  </a>
+                </li>
+            </ul>                                          
+            <h2 class="uppercase text-2xl my-3 ">{{postdata.data.title}} </h2>
+            <p class="line-clamp-2 h-[39px]">{{postdata.data.excerpt}}
+            <p class="mt-4 text-amber-500" >LAST UPDATE {{postdata.data.createdAt.toMillis() | date}}</p>                    
+    </div>        
+</div>
 

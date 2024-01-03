@@ -5,7 +5,7 @@
                
             >
                 <li  *ngFor="let category of dataCategory">
-                    <a   class="cursor-pointer" (click)="ouput(category.data.category)">
+                    <a   class="cursor-pointer" [routerLink]="['/category',category.data.category,category.id]">
                         {{category.data.category}}
                     </a>
                 </li>
